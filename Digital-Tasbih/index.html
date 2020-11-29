@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>তাসবীহ</title>
+    <link href="https://fonts.googleapis.com/css?family=Galada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="http://tiny.cc/4d6eez">
+</head>
+<body>
+    <h1> <marquee behavior="alternate">ডিজিটাল তাসবীহ</marquee> </h1>
+
+    <div class="inst">
+        <h2><u>নির্দেশনাবলি:</u></h2>
+        <h3>১. প্রার্থনা প্রথম থেকে শুরু করতে <button id="startT">জিকির শুরু করুন</button> বাটনে ক্লিক করুন,</h3>
+        <h3>২. জিকির গুণতে <button id="plusT">জিকির গুণতে থাকুন</button> বাটনে ক্লিক করুন,</h3>
+        <h3>৩. ভুলবশত <button id="plusT">জিকির গুণতে থাকুন</button> বাটনে দুইবার ক্লিক করে ফেললে <button id="minusT">কমিয়ে দিন</button> বাটন চাপুন,</h3>
+        <h3>৪. প্রার্থনা শেষে <button id="stopT">জিকির শেষ করুন</button> বাটনে ক্লিক করুন।</h3>
+    </div>
+
+    <button class="Btn" id="start" onclick="start()">জিকির শুরু করুন</button> <br>
+    <button class="Btn" id="plus" onclick="plus()">জিকির গুণতে থাকুন</button>
+    <input type="text" id="ans" value="0">
+    <button class="Btn" id="minus" onclick="minus()">কমিয়ে দিন</button> <br>
+    <button class="Btn" id="stop" onclick="stop()">জিকির শেষ করুন</button> <br>
+    <h2 id="end"></h2>
+
+    <script src="script.js"></script>
+</body>
+</html>

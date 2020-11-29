@@ -1,0 +1,67 @@
+body {
+    text-align: center;
+    background-image: url('https://www.swedishnomad.com/wp-content/images/2019/02/Facts-about-Islam.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, h2, h3, input, button {
+    font-family: 'Galada', cursive;
+}
+
+input {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    background: #3d3b36;
+    font-size: 25px;
+    width: 200px;
+    border-radius: 40px;
+    color: white;
+}
+
+marquee {
+    width: 20em;
+}
+
+button {
+    width: 8em;
+    font-size: 18px;
+    color: white;
+    background: green;
+    border-radius: 40px;
+}
+
+.inst {
+    text-align: justify;
+    margin-top: -20px;
+}
+
+#startT, #plusT, #minusT, #stopT {
+    font-size: 15px;
+    width: 12em;
+    border-radius: 20px;
+}
+
+#end {
+    color: black;
+}
+
+.Btn {
+    width: 12em;
+}
+
+#start {
+    margin-bottom: 1em;
+}
+
+#plus {
+    margin-right: 4em;
+}
+
+#minus {
+    margin-left: 4em;
+}
+
+#stop {
+    margin-top: 1em;
+}
