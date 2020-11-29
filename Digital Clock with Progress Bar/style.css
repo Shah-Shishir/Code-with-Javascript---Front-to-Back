@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #211617;
+  color: coral;
+  font-family: "Electrolize", sans-serif;
+}
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: coral;
+  font-size: 22px;
+}
+body .wrapper .title {
+  font-size: 30px;
+  text-align: center;
+  padding: 50px 0 100px;
+}
+body .wrapper .clock {
+  display: flex;
+  justify-content: center;
+}
+body .wrapper .clock .units {
+  width: 200px;
+}
+body .wrapper .clock .units .time-data {
+  font-size: 60px;
+}
+body .wrapper .clock .sidebar {
+  width: 150px;
+  padding: 10px;
+}
+body .wrapper .clock .sidebar .time-format {
+  font-size: 16px;
+}
+body .wrapper .clock .sidebar .abbr {
+  visibility: hidden;
+  padding-top: 20px;
+  height: 65px;
+}
+body .wrapper .clock .sidebar .switch {
+  cursor: pointer;
+  font-size: 12px;
+}
+body .wrapper .progress-bar {
+  margin-top: 20px;
+  background-color: coral;
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid #f00d0d;
+}
+body .wrapper .copyright {
+  margin-top: 200px;
+  font-size: 12px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
