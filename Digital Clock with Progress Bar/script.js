@@ -15,6 +15,7 @@ function switchFormat() {
     var currentHours = date.getHours();
     if (timeFormat.textContent === "24 Hours Format") {
         timeFormat.textContent = "12 Hours Format";
+        format = "12h";
         abbrebiation.style.visibility = "visible";
         if (currentHours > 12) {
             currentHours -= 12;
@@ -27,7 +28,11 @@ function switchFormat() {
                 format = "12h";
             }
         }
+        if (currentHours === 12) {
+            abbrebiation.textContent = "PM";
+        }
     } else {
+        format = "24h";
         timeFormat.textContent = "24 Hours Format";
         abbrebiation.style.visibility = "hidden";
         if (currentHours > 12) {
