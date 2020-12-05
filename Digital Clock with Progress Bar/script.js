@@ -36,6 +36,9 @@ function switchFormat() {
             abbrebiation.textContent = 'AM';
             window.localStorage.setItem('abbr', 'AM');
         }
+        if (currentHours === 12) {
+            abbrebiation.textContent = "PM";
+        }
     } else {
         timeFormat.textContent = '24 Hours Format';
         abbrebiation.style.visibility = 'hidden';
