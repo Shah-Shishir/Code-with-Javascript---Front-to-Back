@@ -26,10 +26,13 @@ body {
         .clock {
             display: flex;
             justify-content: center;
-            .units {
-                width: 200px;
-                .time-data {
-                    font-size: 60px;
+            .clock-data {
+                display: flex; 
+                .units {
+                    width: 200px;
+                    .time-data {
+                        font-size: 60px;
+                    }
                 }
             }
             .sidebar {
@@ -62,4 +65,35 @@ body {
             text-align: center;
         }
     }
+}
+
+@media (max-width: 768px) {
+    .clock {
+        flex-direction: column;
+       .clock-data {
+        margin-left: 30px;
+           .units {
+               width: 100px !important;
+               .time-data {
+                   font-size: 40px !important;
+               }
+           }
+       }
+   }
+   .sidebar {
+        display: flex;
+        justify-content: center;
+        width: auto !important;
+        margin-top: 40px;
+        .abbr {
+            margin-top: 20px;
+        }
+        .switch {
+            font-size: 16px !important;
+        }
+   }
+   .copyright {
+       margin-top: 100px !important;
+       font-size: 16px !important;
+   }
 }

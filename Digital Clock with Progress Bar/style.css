@@ -2,53 +2,83 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   background-color: #211617;
   color: coral;
-  font-family: "Electrolize", sans-serif;
+  font-family: 'Electrolize', sans-serif;
 }
+
 body .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: coral;
   font-size: 22px;
 }
+
 body .wrapper .title {
   font-size: 30px;
   text-align: center;
   padding: 50px 0 100px;
 }
+
 body .wrapper .clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-body .wrapper .clock .units {
+
+body .wrapper .clock .clock-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .wrapper .clock .clock-data .units {
   width: 200px;
 }
-body .wrapper .clock .units .time-data {
+
+body .wrapper .clock .clock-data .units .time-data {
   font-size: 60px;
 }
+
 body .wrapper .clock .sidebar {
   width: 150px;
   padding: 10px;
 }
+
 body .wrapper .clock .sidebar .time-format {
   font-size: 16px;
 }
+
 body .wrapper .clock .sidebar .abbr {
   visibility: hidden;
   padding-top: 20px;
   height: 65px;
 }
+
 body .wrapper .clock .sidebar .switch {
   cursor: pointer;
   font-size: 12px;
 }
+
 body .wrapper .progress-bar {
   margin-top: 20px;
   background-color: coral;
@@ -56,10 +86,48 @@ body .wrapper .progress-bar {
   border-radius: 5px;
   border: 1px solid #f00d0d;
 }
+
 body .wrapper .copyright {
   margin-top: 200px;
   font-size: 12px;
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .clock {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .clock .clock-data {
+    margin-left: 30px;
+  }
+  .clock .clock-data .units {
+    width: 100px !important;
+  }
+  .clock .clock-data .units .time-data {
+    font-size: 40px !important;
+  }
+  .sidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: auto !important;
+    margin-top: 40px;
+  }
+  .sidebar .abbr {
+    margin-top: 20px;
+  }
+  .sidebar .switch {
+    font-size: 16px !important;
+  }
+  .copyright {
+    margin-top: 100px !important;
+    font-size: 16px !important;
+  }
+}
 /*# sourceMappingURL=style.css.map */
