@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Hero } from './_models/hero.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   searchText: string = '';
-  heroes = [
+  heroes: Hero[] = [
     {
       name: 'Dr. Nice',
       occupation: 'Doctor'

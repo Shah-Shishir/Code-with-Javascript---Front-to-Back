@@ -1,21 +1,21 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+import { Hero } from "../_models/hero.model";
+
 @Pipe({
   name: 'searchFilter'
 })
 export class SearchFilterPipe implements PipeTransform {
 
-  transform(items: [{name: string, occupation: string}], searchText: string): any {
+  transform(heroes: Hero[], searchText: string): any[] {
     searchText = searchText.toLocaleLowerCase();
-    items = items.filter(item =>
-      item.name.toLocaleLowerCase().includes(searchText)
-      || item.occupation.toLocaleLowerCase().includes(searchText)
+    heroes = heroes.filter(hero =>
+      hero.name.toLocaleLowerCase().includes(searchText)
+      || hero.occupation.toLocaleLowerCase().includes(searchText)
     );
-    if (items.length === 0)
-      items.push({
-        name: 'No result found',
-        occupation: ''
-      })
-    return items;
+    if (!heroes.length) {
+      heroes.push({ name: 'No result found', occupation: ''})
+    }
+    return heroes;
   }
 }
