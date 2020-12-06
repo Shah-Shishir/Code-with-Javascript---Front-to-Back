@@ -42,7 +42,7 @@ body {
                     font-size: 16px;
                 }
                 .abbr {
-                    visibility: hidden;
+                    width: 50px;
                     padding-top: 20px;
                     height: 65px;
                 }
@@ -68,6 +68,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .title {
+        font-size: 24px !important;
+    }
     .clock {
         flex-direction: column;
        .clock-data {
@@ -93,7 +96,7 @@ body {
         }
    }
    .copyright {
-       margin-top: 100px !important;
-       font-size: 16px !important;
+       margin-top: 50px !important;
+       font-size: 12px !important;
    }
 }

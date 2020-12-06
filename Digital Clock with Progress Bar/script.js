@@ -10,9 +10,14 @@ var format = '24h';
 window.addEventListener('load', function() {
     format = localStorage.getItem('format');
     timeFormat.textContent = localStorage.getItem('text');
+    if (format === '24h') {
+        return;
+    }
     if (localStorage.getItem('abbr')) {
         abbrebiation.style.visibility = 'visible';
         abbrebiation.innerText = localStorage.getItem('abbr');
+    } else {
+        abbrebiation.innerHTML = new Date().getHours() >= 12 ? 'PM' : 'AM';
     }
 });
 
@@ -44,7 +49,6 @@ function switchFormat() {
         abbrebiation.style.visibility = 'hidden';
         format = '24h';
         window.localStorage.setItem('format', '24h');
-        window.localStorage.removeItem('abbr');
         if (currentHours > 12) {
             currentHours -= 12;
             hour.textContent = currentHours < 10 ? ('0' + currentHours) : currentHours;
