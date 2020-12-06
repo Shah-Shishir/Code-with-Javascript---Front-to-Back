@@ -1,0 +1,19 @@
+<main>
+  <div class="wrapper">
+    <div class="input-field">
+        <label>
+          <input type="text" name="heroes-input" [(ngModel)]="searchText"
+                 autofocus placeholder="Search hero by name or occupation">
+        </label>
+    </div>
+    <div class="search-result">
+      <div
+        *ngFor="let hero of heroes | searchFilter: searchText">
+        {{ hero.name }}
+        <span>
+          {{ hero.occupation }}
+        </span>
+      </div>
+    </div>
+  </div>
+</main>
