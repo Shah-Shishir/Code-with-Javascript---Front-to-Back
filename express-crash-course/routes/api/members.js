@@ -19,20 +19,21 @@ router.get('/:id', (req, res) => {
 
 // Creates a member
 router.post('/', (req, res) => {
+     console.log(req.body);
     const newMember = {
         id: uuid.v4(),
         name: req.body.name,
         email: req.body.email,
         status: 'active'
     }
-
+    
     if (!newMember.name || !newMember.email) {
         return res.status(400).json({ message: 'Please enter a name and email' });
     }
-
+    
     members.push(newMember);
     res.json(members);
-    res.redirect('/');
+    // res.redirect('/');
 })
 
 // Updates a member
