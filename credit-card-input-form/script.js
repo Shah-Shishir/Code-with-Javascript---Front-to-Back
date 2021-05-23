@@ -25,6 +25,12 @@ function inputCardNumber(e) {
     const value = e.target.value;
     let serial = +id.split('-')[2];
 
+    if (![0,1,2,3,4,5,6,7,8,9].includes(+value)) {
+        e.target.value = '';
+        alert('Please enter a digit between 0 and 9');
+        return;
+    }
+
     if (value) {
         if (serial === 11) {
             serial = 0;
