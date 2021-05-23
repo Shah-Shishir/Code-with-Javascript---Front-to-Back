@@ -1,5 +1,6 @@
 const cardInput = document.querySelector(".card-input");
 const submitBtn = document.querySelector(".submit-btn");
+const result = document.querySelector(".result");
 
 submitBtn.addEventListener('click', submitCardNumber);
 
@@ -17,6 +18,7 @@ function initialize() {
     telInputs[0].setAttribute('autofocus', true);
     for (const telInput of telInputs) {
         telInput.addEventListener("input", inputCardNumber);
+        telInput.addEventListener("keydown", clearCurrentNumber);
     }
 }
 
@@ -27,12 +29,14 @@ function inputCardNumber(e) {
 
     if (![0,1,2,3,4,5,6,7,8,9].includes(+value)) {
         e.target.value = '';
+        setResultNull();
         alert('Please enter a digit between 0 and 9');
         return;
     }
 
     if (value) {
-        if (serial === 15) {
+        cardNumber = cardNumber.substr(0,serial) + e.target.value + cardNumber.substr(serial+1,15);
+        if (serial >= 15) {
             serial = 0;
         } else {
             ++serial;
@@ -40,15 +44,41 @@ function inputCardNumber(e) {
         }
     }
     
-    cardNumber += e.target.value;
+    console.log(serial, value, cardNumber, cardNumber.length);
 }
 
 function submitCardNumber() {
+    if (cardNumber[0] !== '4') {
+        setResultNull();
+        alert('Card number must start with 4!');
+        return;
+    }
     if (cardNumber.length < 16 || (cardNumber.length === 16 && +cardNumber === 0)) {
+        setResultNull();
         alert('Please enter a valid credit card!');
         return;
     }
-    document.querySelector(".result").innerText = `Your card number is ${cardNumber}`;
+    result.innerText = `Your card number is ${cardNumber}`;
+}
+
+function clearCurrentNumber(e) {
+    const id = e.srcElement.id;
+    let serial = +id.split('-')[2];
+    const code = e.which || e.keyCode;
+    if (code === 8) {
+        console.log(e.target.value);
+        e.target.value = '';
+        if (serial > 0) {
+            setResultNull();
+            --serial;
+            document.querySelector(`#input-id-${serial}`).focus();
+        }
+    }
+    console.log(code);
+}
+
+function setResultNull() {
+    result.innerText = '';
 }
 
 initialize();
