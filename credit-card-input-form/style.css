@@ -14,7 +14,7 @@
 .wrapper h1 {
   text-transform: capitalize;
 }
-.wrapper input[type=tel] {
+.wrapper input[type="tel"] {
   height: 30px;
   width: 30px;
   border: 1px solid #444444;
@@ -22,6 +22,7 @@
   margin-bottom: 10px;
   font-size: 25px;
   text-align: center;
+  border-radius: 3px;
 }
 .wrapper .submit-btn {
   font-family: "Poppins", sans-serif;
@@ -51,7 +52,7 @@
   .wrapper h1 {
     font-size: 20px;
   }
-  .wrapper input[type=tel] {
+  .wrapper input[type="tel"] {
     height: 16px;
     width: 16px;
     font-size: 15px;

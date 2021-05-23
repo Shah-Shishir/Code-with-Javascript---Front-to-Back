@@ -6,7 +6,7 @@ submitBtn.addEventListener('click', submitCardNumber);
 let cardNumber = '';
 
 function initialize() { 
-    for (let i=0; i<12; i++) {
+    for (let i=0; i<16; i++) {
         const input = document.createElement('input');
         input.setAttribute('type', 'tel');
         input.setAttribute('id', `input-id-${i}`);
@@ -32,7 +32,7 @@ function inputCardNumber(e) {
     }
 
     if (value) {
-        if (serial === 11) {
+        if (serial === 15) {
             serial = 0;
         } else {
             ++serial;
@@ -43,7 +43,11 @@ function inputCardNumber(e) {
     cardNumber += e.target.value;
 }
 
-function submitCardNumber(e) {
+function submitCardNumber() {
+    if (cardNumber.length < 16 || (cardNumber.length === 16 && +cardNumber === 0)) {
+        alert('Please enter a valid credit card!');
+        return;
+    }
     document.querySelector(".result").innerText = `Your card number is ${cardNumber}`;
 }
 
