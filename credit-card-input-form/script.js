@@ -43,8 +43,6 @@ function inputCardNumber(e) {
             document.querySelector(`#input-id-${serial}`).focus();
         }
     }
-    
-    console.log(serial, value, cardNumber, cardNumber.length);
 }
 
 function submitCardNumber() {
@@ -66,7 +64,6 @@ function clearCurrentNumber(e) {
     let serial = +id.split('-')[2];
     const code = e.which || e.keyCode;
     if (code === 8) {
-        console.log(e.target.value);
         e.target.value = '';
         if (serial > 0) {
             setResultNull();
@@ -74,7 +71,6 @@ function clearCurrentNumber(e) {
             document.querySelector(`#input-id-${serial}`).focus();
         }
     }
-    console.log(code);
 }
 
 function setResultNull() {
