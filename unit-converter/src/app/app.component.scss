@@ -1,0 +1,42 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    display: flex;
+    grid-gap: 50px;
+    .form-wrapper {
+      width: 305px;
+      form {
+        .input-wrapper {
+          border: 1px solid #444;
+          border-bottom: none;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        input {
+          border: none;
+          height: 40px;
+        }
+        select {
+          cursor: pointer;
+          font-size: 14px;
+          width: 100%;
+          padding: 5px;
+          border: 1px solid #444;
+          background: none;
+          option {
+            cursor: pointer;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <h1>Meet our length converter app!</h1>
+  <div class="form-group">
+    <div class="form-wrapper">
+      <form>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            autocomplete="off"
+            min="1"
+            name="first-value"
+            [(ngModel)]="firstLengthOption.value"
+            (input)="changeLengthOptionValue(2)"
+          />
+          {{ firstLengthOption.unit }}
+        </div>
+        <select (change)="changeLengthOptionUnit(1, $event)">
+          <option *ngFor="let option of lengthOptions" [value]="option.unit">
+            {{ option.label }}
+          </option>
+        </select>
+      </form>
+    </div>
+    <div class="form-wrapper">
+      <form>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            autocomplete="off"
+            min="1"
+            name="second-value"
+            [(ngModel)]="secondLengthOption.value"
+            (input)="changeLengthOptionValue(1)"
+          />
+          {{ secondLengthOption.unit }}
+        </div>
+        <select (change)="changeLengthOptionUnit(2, $event)">
+          <option *ngFor="let option of lengthOptions" [value]="option.unit">
+            {{ option.label }}
+          </option>
+        </select>
+      </form>
+    </div>
+  </div>
+</div>
