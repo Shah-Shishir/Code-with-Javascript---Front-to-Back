@@ -13,6 +13,11 @@
   flex-direction: column;
   h1 {
     text-transform: capitalize;
+    margin-bottom: 0;
+  }
+  small {
+    margin-bottom: 20px;
+    font-size: 10px;
   }
   input[type="tel"] {
     height: 30px;
@@ -42,6 +47,7 @@
     }
   }
   .result {
+    text-align: center;
     font-weight: 300;
     font-size: 20px;
     text-transform: capitalize;
